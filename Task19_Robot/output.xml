@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.8 on darwin)" generated="2025-07-09T10:12:20.426587" rpa="false" schemaversion="5">
+<suite id="s1" name="Task19" source="/Users/dhiviya/Documents/Task19_Robot/Task19.robot">
+<test id="s1-t1" name="Login functionality of Robot Spare Bin Industries" line="26">
+<kw name="Initate Browser">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-09T10:12:20.502374" level="INFO">Opening browser 'Chrome' to base url 'https://robotsparebinindustries.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-09T10:12:20.502219" elapsed="3.363882"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-09T10:12:23.866698" elapsed="0.162917"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-07-09T10:12:24.029835" elapsed="0.000882"/>
+</kw>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<status status="PASS" start="2025-07-09T10:12:20.501786" elapsed="3.529096"/>
+</kw>
+<kw name="Input of Login Credentials">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-09T10:12:24.032749" level="INFO">Typing text 'maria' into text field 'id=username'.</msg>
+<arg>${FIELDS[0]}</arg>
+<arg>${USERINFO['Username']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-09T10:12:24.032438" elapsed="0.104397"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-09T10:12:24.137226" level="INFO">Typing text 'thoushallnotpass' into text field 'id=password'.</msg>
+<arg>${FIELDS[1]}</arg>
+<arg>${USERINFO['Password']}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-09T10:12:24.137016" elapsed="0.036131"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-09T10:12:24.173518" level="INFO">Clicking button 'xpath=//button[@type="submit"]'.</msg>
+<arg>xpath=//button[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-09T10:12:24.173328" elapsed="0.036707"/>
+</kw>
+<arg>${FIELDS[0]}</arg>
+<arg>${FIELDS[1]}</arg>
+<arg>${USERINFO['Username']}</arg>
+<arg>${USERINFO['Password']}</arg>
+<status status="PASS" start="2025-07-09T10:12:24.031324" elapsed="0.178878"/>
+</kw>
+<kw name="Assertion after Login">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Successfully logged in!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-09T10:12:24.210878" elapsed="0.000247"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-07-09T10:12:24.218033" level="INFO">Current page contains text 'Order your robot!'.</msg>
+<arg>Order your robot!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-07-09T10:12:24.211236" elapsed="0.006964"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Page contains 'Order your robot!'</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-09T10:12:24.218319" elapsed="0.000201"/>
+</kw>
+<status status="PASS" start="2025-07-09T10:12:24.210623" elapsed="0.007984"/>
+</kw>
+<kw name="Logout Functionality">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIELDS[2]}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-09T10:12:24.219192" elapsed="0.225768"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-07-09T10:12:24.445614" level="INFO">Clicking button 'id=logout'.</msg>
+<arg>${FIELDS[2]}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-09T10:12:24.445305" elapsed="0.041905"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-09T10:12:26.488636" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-09T10:12:24.487390" elapsed="2.001766"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Successfully logged out!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-07-09T10:12:26.489531" elapsed="0.000494"/>
+</kw>
+<arg>${FIELDS[2]}</arg>
+<status status="PASS" start="2025-07-09T10:12:24.218785" elapsed="2.271436"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-09T10:12:26.490483" elapsed="0.087857"/>
+</kw>
+<status status="PASS" start="2025-07-09T10:12:20.501424" elapsed="6.077216"/>
+</test>
+<status status="PASS" start="2025-07-09T10:12:20.428512" elapsed="6.150744"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Task19" id="s1" pass="1" fail="0" skip="0">Task19</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
